@@ -1,26 +1,19 @@
 import { useState } from "react";
 
-function AsyncStateDemo() {
-  const [count, setCount] = useState(0);
+const AsyncStateDemo = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  function handleClick() {
-    console.log("Before update:", count);
-    setCount(count + 1);
-    console.log("After update (same render):", count);
-
-    // Try logging after a short delay
-    setTimeout(() => {
-      console.log("After timeout:", count); // Still old value in closure
-    }, 0);
-  }
+  const loggedInn = () => {
+    setLoggedIn(!loggedIn);
+  };
 
   return (
     <div>
-      <h2>Async State Demo</h2>
-      <p>Count: {count}</p>
-      <button onClick={handleClick}>Increment</button>
+      <p>are you logged in?</p>
+      {loggedIn ? <p>logged in!</p> : <p>not logged in!</p>}
+      <button onClick={loggedInn}>{loggedIn ? "Logout" : "Login"}</button>
     </div>
   );
-}
+};
 
 export default AsyncStateDemo;
