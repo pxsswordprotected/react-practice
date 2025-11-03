@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import UserGrid from "./UserGrid";
 import NoteApp from "./NoteApp";
+import FormPracticeOne from "./FormPracticeOne";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,6 +34,7 @@ function App() {
       </p>
       <UserGrid />
       <NoteApp />
+      <FormPracticeOne />
     </>
   );
 }
