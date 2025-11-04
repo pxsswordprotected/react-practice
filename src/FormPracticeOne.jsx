@@ -1,35 +1,52 @@
 import { useState } from "react";
 
 const FormPracticeOne = () => {
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [submitted, setSubmit] = useState(false);
-  const [submitName, setSubmitName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPass] = useState("");
+  //   const [submitted, setSubmit] = useState(false);
+  const [err, setErr] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("form submitted:", name, message);
-    setSubmit(true);
-    setSubmitName(name);
-    setName("");
-    setMessage("");
+    console.log("Submit clicked"); // Does this print?
+
+    if (!email.includes("@")) {
+      console.log("Setting error"); // Does this print?
+      setErr("Email needs to include @ sign");
+      return;
+    }
+
+    if (password.length < 6) {
+      setErr("pass needs to be longer");
+      return;
+    }
+    setErr("");
+    setLoggedIn(true);
   };
+
+  if (loggedIn) {
+    return <p>Welcome back!</p>;
+  }
 
   return (
     <>
-      {submitted && <p>thank you for the form {submitName}!</p>}
+      {err && <p>{err}</p>}
+
       <form onSubmit={handleSubmit}>
         <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="enter your name"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="enter email"
         />
-        <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="enter your message"
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPass(e.target.value)}
+          placeholder="enter password"
         />
-        <button type="submit">Submit form</button>
+        <button type="submit">Log In</button>
       </form>
     </>
   );
