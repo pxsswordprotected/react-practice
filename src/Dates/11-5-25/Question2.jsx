@@ -7,7 +7,7 @@ export const Question2 = () => {
   useEffect(() => {
     setLoading(true); //not sure if right placement
     axios.get("https://jsonplaceholder.typicode.com/posts").then((p) => {
-      setPosts(p.data); 
+      setPosts(p.data);
       setLoading(false);
     });
   }, []);

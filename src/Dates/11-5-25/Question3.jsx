@@ -1,17 +1,37 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 
 const Question3 = () => {
+  const [search, setSearch] = useState("");
+  const [results, setResults] = useState(null);
 
+  const handleSearch = () => {
+    axios
+      .get(`https://jsonplaceholder.typicode.com/posts?q=${search}`)
+      .then((r) => {
+        setResults(r.data);
+      });
+  };
+};
 
+return (
+  <>
+    <input
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      placeholder="Search..."
+    ></input>
+    <button onClick={handleSearch}>Search</button>
 
-  return (
-    <>
-    <div>Question3</div>
-    </>
-  )
-}
+    <ul>
+      {results &&
+        results.map((result) => {
+          <li key={result.id}>{result.content}</li>;
+        })}
+    </ul>
+  </>
+);
 
-export default Question3
+export default Question3;
 
 // Build a component called SearchResults that:
 
