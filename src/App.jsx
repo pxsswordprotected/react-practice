@@ -5,6 +5,7 @@ import "./App.css";
 import UserGrid from "./UserGrid";
 import NoteApp from "./NoteApp";
 import FormPracticeOne from "./FormPracticeOne";
+import { PracticeOne } from "./Dates";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,9 +33,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <UserGrid />
+      {/* <UserGrid />
       <NoteApp />
-      <FormPracticeOne />
+      <FormPracticeOne /> */}
+      <PracticeOne />
     </>
   );
 }
