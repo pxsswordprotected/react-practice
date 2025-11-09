@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Q6LoginService from "./Q6LoginService";
 import Q6Notes from "./Q6Notes";
 
@@ -17,7 +17,6 @@ const Q6 = () => {
       console.log("logged in data:", loggedIn);
       setUser(loggedIn);
       Q6Notes.setToken(loggedIn.token);
-      const token = Q6Notes.setToken(user.token);
       window.localStorage.setItem("user", JSON.stringify(loggedIn));
 
       setUsername("");
@@ -38,7 +37,7 @@ const Q6 = () => {
 
   const logout = () => {
     setUser(null);
-    window.localStorage.removeItem(user);
+    window.localStorage.removeItem("user");
     Q6Notes.setToken(null);
   };
 
@@ -73,17 +72,3 @@ const Q6 = () => {
 };
 
 export default Q6;
-
-// Modify your App to persist login state:
-
-//     In handleSubmit (after successful login): save the user to Local Storage using JSON.stringify()
-
-//     Add a useEffect with an empty dependency array [] that:
-
-//         Reads from Local Storage on mount
-
-//         Parses the user data back from a string
-
-//         Sets the user state and calls noteService.setToken(user.token) if a saved user exists
-
-//     In your logout function: remove the user from Local Storage
