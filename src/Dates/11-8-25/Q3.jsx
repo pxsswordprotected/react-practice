@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 
 const Q3 = ({ type, onDismiss, children }) => {
-  return <div>Q3</div>;
+  const styles = {
+    success: { backgroundColor: "lightgreen", padding: "10px" },
+    error: { backgroundColor: "lightcoral", padding: "10px" },
+    warning: { backgroundColor: "khaki", padding: "10px" },
+  };
+
+  return (
+    <>
+      <div style={styles[type]}>
+        {children}
+        <button onClick={onDismiss}>x</button>
+      </div>
+    </>
+  );
 };
 
 export default Q3;
