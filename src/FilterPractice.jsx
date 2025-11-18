@@ -9,14 +9,14 @@ const FilterPractice = () => {
 
   const [filterType, setFilter] = useState("all");
 
-  const DisplayTodos =
+  const displayTodos =
     filterType === "completed"
       ? todos.filter((item) => item.done === true)
       : filterType === "incomplete"
-      ? todos.filter((item) => item.done === false)
-      : filterType === "high-priority"
-      ? todos.filter((item) => item.priority === "high")
-      : todos;
+        ? todos.filter((item) => item.done === false)
+        : filterType === "high-priority"
+          ? todos.filter((item) => item.priority === "high")
+          : todos;
 
   return (
     <>
@@ -30,9 +30,9 @@ const FilterPractice = () => {
       </button>
 
       <ul>
-        {DisplayTodos.map((item) => {
-          <li key={item.id}>{item.text}</li>;
-        })}
+        {displayTodos.map((item) => (
+          <li key={item.id}>{item.text}</li>
+        ))}
       </ul>
     </>
   );

@@ -6,6 +6,7 @@ import UserGrid from "./UserGrid";
 import NoteApp from "./NoteApp";
 import FormPracticeOne from "./FormPracticeOne";
 import { PracticeOne } from "./Dates";
+import Q1 from "./Dates/11-14-25/Q1";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -37,6 +38,9 @@ function App() {
       <NoteApp />
       <FormPracticeOne /> */}
       <PracticeOne />
+      <Q1 buttonLabel="show">
+        <p className="underline text-3xl">This is a secret</p>
+      </Q1>
     </>
   );
 }
