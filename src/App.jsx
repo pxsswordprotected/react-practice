@@ -7,6 +7,8 @@ import NoteApp from "./NoteApp";
 import FormPracticeOne from "./FormPracticeOne";
 import { PracticeOne } from "./Dates";
 import Q1 from "./Dates/11-14-25/Q1";
+// import Q1Alert f./Dates/11-18-25/Q1Alert25/Q1Alert";
+import Q3TaskTagger from "./Dates/11-18-25/Q3TaskTagger";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -71,6 +73,23 @@ function App() {
       <div className="bg-gray-300/50 h-40">
         <p className="text-blue-500">Text</p>
       </div>
+      <div className="container mx-auto px-4 border">
+        Content constrained to readable width and centered Content constrained
+        to readable width and centeredContent constrained to readable width and
+        centeredContent constrained to readable width and centered
+      </div>
+
+      <button className="focus:ring-4 focus:ring-red-300">
+        Click me (shows ring on focus)
+      </button>
+
+      <button className="bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out">
+        Smooth color change
+      </button>
+
+      {/* <div className="animate-spin">a</div>*/}
+      {/* <Q1Alert status="active">Success</Q1Alert>*/}
+      <Q3TaskTagger />
     </>
   );
 }
