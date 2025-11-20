@@ -1,15 +1,36 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Q4UseEffect = () => {
-  
-  return;
-}
+  const [users, setUsers] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      axios
+        .get("https://jsonplaceholder.typicode.com/users")
+        .then((p) => setUsers((prevUsers) => [...prevUsers, ...p.data]))
+        .finally(() => setLoading(false));
+    }, 3000);
+  }, []);
+
+  return (
+    <>
+      <div className="text-center">
+        {isLoading && <p className="animate-pulse">Loading...</p>}
+      </div>
+      {!isLoading && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {users.map((user) => (
+            <div key={user.id}>{user.name}</div>
+          ))}
+        </div>
+      )}
+    </>
+  );
+};
 
 export default Q4UseEffect;
-
-
-
-
 
 /*
 Your Task: Create a component called UserGallery.
