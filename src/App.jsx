@@ -11,6 +11,8 @@ import Q1 from "./Dates/11-14-25/Q1";
 import Q3TaskTagger from "./Dates/11-18-25/Q3TaskTagger";
 import Q4UseEffect from "./Dates/11-18-25/Q4UseEffect";
 import Q6ThemeProvider from "./Dates/11-18-25/Q6ThemeProvider";
+import Q1Slider from "./Dates/11-20-25/Q1Slider";
+import Q2Dropdown from "./Dates/11-20-25/Q2Dropdown";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,7 +20,7 @@ function App() {
 
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -41,13 +43,12 @@ function App() {
       {/* <UserGrid />
       <NoteApp />
       <FormPracticeOne /> */}
-      <PracticeOne />
+      {/* <PracticeOne />
       <Q1 buttonLabel="show">
         <p className="underline text-3xl">This is a secret</p>
       </Q1>
       <button className="p-4 border">Click me</button>
       <p className="text-xl font-bold mb-7">Hello world</p>
-
       <div className="rounded-lg shadow-md bg-white p-4">
         <h2 className="text-lg font-semibold mb-2">Card title</h2>
         <p className="text-sm text-gray-600">Some card content.</p>
@@ -80,20 +81,23 @@ function App() {
         to readable width and centeredContent constrained to readable width and
         centeredContent constrained to readable width and centered
       </div>
-
       <button className="focus:ring-4 focus:ring-red-300">
         Click me (shows ring on focus)
       </button>
-
       <button className="bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out">
         Smooth color change
       </button>
+      */}
 
       {/* <div className="animate-spin">a</div>*/}
       {/* <Q1Alert status="active">Success</Q1Alert>*/}
-      <Q3TaskTagger />
+      {/* <Q3TaskTagger />
       <Q4UseEffect />
-      <Q6ThemeProvider />
+      <Q6ThemeProvider />*/}
+      {/* <Q1Slider />*/}
+      <div className="w-screen">
+        <Q2Dropdown />
+      </div>
     </>
   );
 }
